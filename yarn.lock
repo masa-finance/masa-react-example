@@ -1903,13 +1903,13 @@
   dependencies:
     ethers "^5.6.9"
 
-"@masa-finance/masa-react@^0.15.7":
-  version "0.15.7"
-  resolved "https://registry.yarnpkg.com/@masa-finance/masa-react/-/masa-react-0.15.7.tgz#f35b32096749bf5fcd20086696787189386ff0d9"
-  integrity sha512-uaVCvhgLnzqspYov2lQzSUcWsnKEe+iCrs2dHTJ/Ud0RZunq5/sjU8y4arxptSEVfQfSyzTTLTfMtaKqETwFrQ==
+"@masa-finance/masa-react@^0.15.9":
+  version "0.15.9"
+  resolved "https://registry.yarnpkg.com/@masa-finance/masa-react/-/masa-react-0.15.9.tgz#3fba84890dac41a2a31ba3357b54928644216766"
+  integrity sha512-izLM5LCIm0IOiCTAJ/hNXYS0TSFrUuKnXjyySXsn34+pBb0juYI/HLq5cF0L37cek47SoyKogdP5i4XofBo9Ug==
   dependencies:
     "@auth0/auth0-react" "^1.12.0"
-    "@masa-finance/masa-sdk" "^0.5.0"
+    "@masa-finance/masa-sdk" "^0.5.2"
     "@rollup/plugin-commonjs" "^23.0.2"
     "@rollup/plugin-node-resolve" "^15.0.1"
     "@rollup/plugin-typescript" "^9.0.2"
@@ -1933,14 +1933,14 @@
     rollup-plugin-terser "^7.0.2"
     rollup-plugin-url "^3.0.1"
     rollup-plugin-visualizer "^5.8.3"
-    sass-loader "^13.1.0"
+    sass-loader "^13.2.0"
     storybook-addon-sass-postcss "^0.1.3"
     use-axios-client "^2.0.0"
 
-"@masa-finance/masa-sdk@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@masa-finance/masa-sdk/-/masa-sdk-0.5.0.tgz#2992ede73072fd7c54fa9302db9c9378c6e0b203"
-  integrity sha512-P76UloRrsBT4hNWjm2gEEZ9cztRa6aUwb3i1gLp9YPrPx2aUxcHuM3oCmLw8alQqjxVyNy6JWhCvqzxDlSOcCg==
+"@masa-finance/masa-sdk@^0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@masa-finance/masa-sdk/-/masa-sdk-0.5.2.tgz#f11bd543260f613fad185a885ba4e02e92d724d5"
+  integrity sha512-yczfbsWEYOps9LNgqoYkD7SpIZha1BvoPaDsIoAnNTtAPUv3RJ7ODfPv9pjZsLTqf9Bx0ZWMcinVcXzAmiJslA==
   dependencies:
     "@masa-finance/masa-contracts-identity" "^0.4.2"
     arweave "^1.11.6"
@@ -9946,7 +9946,7 @@ sass-loader@^12.3.0:
     klona "^2.0.4"
     neo-async "^2.6.2"
 
-sass-loader@^13.1.0:
+sass-loader@^13.2.0:
   version "13.2.0"
   resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-13.2.0.tgz#80195050f58c9aac63b792fa52acb6f5e0f6bdc3"
   integrity sha512-JWEp48djQA4nbZxmgC02/Wh0eroSUutulROUusYJO9P9zltRbNN80JCBHqRGzjd4cmZCa/r88xgfkjGD0TXsHg==
