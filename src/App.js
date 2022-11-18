@@ -1,5 +1,5 @@
 import logo from "./logo.svg";
-import "./App.css";
+import "./App.scss";
 import { MasaProvider, useMasa } from "@masa-finance/masa-react";
 
 import "@masa-finance/masa-react/dist/style.css";
