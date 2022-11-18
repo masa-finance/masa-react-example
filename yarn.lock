@@ -1903,13 +1903,13 @@
   dependencies:
     ethers "^5.6.9"
 
-"@masa-finance/masa-react@^0.15.9":
-  version "0.15.9"
-  resolved "https://registry.yarnpkg.com/@masa-finance/masa-react/-/masa-react-0.15.9.tgz#3fba84890dac41a2a31ba3357b54928644216766"
-  integrity sha512-izLM5LCIm0IOiCTAJ/hNXYS0TSFrUuKnXjyySXsn34+pBb0juYI/HLq5cF0L37cek47SoyKogdP5i4XofBo9Ug==
+"@masa-finance/masa-react@^0.15.12":
+  version "0.15.12"
+  resolved "https://registry.yarnpkg.com/@masa-finance/masa-react/-/masa-react-0.15.12.tgz#78fb6173fbdf5e1998c977a2f8a24f8d9ca8b24b"
+  integrity sha512-t7Sou7xGwxESjQ2e8PufRlODaHmMWli5Q6K7gJ9BTxSXMLlCXHEBw+uNh+oxyHuRKbdPxQ/ryC3AbDHqfGVX9Q==
   dependencies:
     "@auth0/auth0-react" "^1.12.0"
-    "@masa-finance/masa-sdk" "^0.5.2"
+    "@masa-finance/masa-sdk" "^0.5.3"
     "@rollup/plugin-commonjs" "^23.0.2"
     "@rollup/plugin-node-resolve" "^15.0.1"
     "@rollup/plugin-typescript" "^9.0.2"
@@ -1937,10 +1937,10 @@
     storybook-addon-sass-postcss "^0.1.3"
     use-axios-client "^2.0.0"
 
-"@masa-finance/masa-sdk@^0.5.2":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@masa-finance/masa-sdk/-/masa-sdk-0.5.2.tgz#f11bd543260f613fad185a885ba4e02e92d724d5"
-  integrity sha512-yczfbsWEYOps9LNgqoYkD7SpIZha1BvoPaDsIoAnNTtAPUv3RJ7ODfPv9pjZsLTqf9Bx0ZWMcinVcXzAmiJslA==
+"@masa-finance/masa-sdk@^0.5.3":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@masa-finance/masa-sdk/-/masa-sdk-0.5.3.tgz#2f74945f4931849000bb2720fcededf676f6e420"
+  integrity sha512-2yOKvaTYY+N7MjyDKTtqPe5HIp5LTlbOcugdIgKVhrhcfEVL9rI0uG+bjgswPaEonK0oF8BrAh+mVNqpuD0PaQ==
   dependencies:
     "@masa-finance/masa-contracts-identity" "^0.4.2"
     arweave "^1.11.6"
