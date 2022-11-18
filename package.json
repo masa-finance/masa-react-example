@@ -1,5 +1,5 @@
 {
-  "name": "masa-third-party-3",
+  "name": "@masa-finance/masa-example",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
