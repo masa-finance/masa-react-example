@@ -2,6 +2,7 @@
   "name": "@masa-finance/masa-example",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "dependencies": {
     "@masa-finance/masa-react": "^0.15.12",
     "@testing-library/jest-dom": "^5.16.5",
