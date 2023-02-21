@@ -8,8 +8,14 @@ const MasaRequiredComponent = () => {
   const { connect } = useMasa();
 
   const handleConnect = () => {
-    connect({scope: [], callback: () => {alert("Hey I am connected!, now I can do whatever I want")}});
+    connect({
+      scope: [],
+      callback: () => {
+        alert("Hey I am connected!, now I can do whatever I want");
+      },
+    });
   };
+  
   return <div onClick={handleConnect}>Hey! Connect with masa!</div>;
 };
 

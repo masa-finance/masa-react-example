@@ -1,38 +1,36 @@
 import { useMasa } from "@masa-finance/masa-react";
 import { Button, Spin, Table } from "antd";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
-export const CreditReports = () => {
+export const CreditScores = () => {
   const { masa } = useMasa();
-  const [creditReports, setCreditReports] = useState(null);
+  const [creditScore, setCreditScore] = useState(null);
   const [loading, setLoading] = useState(false);
-  const loadCreditReports = async () => {
+
+  const loadCreditScores = useCallback(async () => {
     setLoading(true);
-    const cr = await masa?.creditScore.list();
-    if (cr.length) {
-      setCreditReports(cr);
-    }
+    setCreditScore(await masa?.creditScore.list());
     setLoading(false);
-  };
+  }, [masa]);
 
   useEffect(() => {
     if (masa) {
-      loadCreditReports();
+      void loadCreditScores();
     }
-  }, [masa]);
+  }, [masa, loadCreditScores]);
 
   const tableData = useMemo(() => {
-    if (creditReports) {
-      return creditReports.map((cr) => {
+    if (creditScore) {
+      return creditScore.map((creditScore) => {
         return {
-          score: cr.metadata.properties.value,
-          rating: cr.metadata.properties.value_rating,
-          tokenId: cr.metadata.properties.tokenId,
-          identityId: cr.metadata.properties.identityId,
+          score: creditScore.metadata.properties.value,
+          rating: creditScore.metadata.properties.value_rating,
+          tokenId: creditScore.metadata.properties.tokenId,
+          identityId: creditScore.metadata.properties.identityId,
         };
       });
     }
-  }, [creditReports]);
+  }, [creditScore]);
 
   const columns = [
     {
@@ -59,10 +57,10 @@ export const CreditReports = () => {
 
   return (
     <div>
-      <div className="credit-reports-header">
-        <Button onClick={loadCreditReports}>Reload Credit Reports</Button>
+      <div className="credit-scores-header">
+        <Button onClick={loadCreditScores}>Reload Credit Scores</Button>
       </div>
-      {!loading && creditReports ? (
+      {!loading && creditScore ? (
         <Table dataSource={tableData} columns={columns} />
       ) : (
         <div className="loading-container">

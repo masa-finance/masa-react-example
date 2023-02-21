@@ -1,8 +1,4 @@
-import {
-  EditOutlined,
-  EllipsisOutlined,
-  ShoppingCartOutlined,
-} from "@ant-design/icons";
+import { ShoppingCartOutlined } from "@ant-design/icons";
 import { Avatar, Card } from "antd";
 
 const { Meta } = Card;
@@ -18,11 +14,11 @@ export const FakeNFT = ({ open }) => {
         />
       }
       actions={[
-        <ShoppingCartOutlined key="buy-now-pay-later" onClick={() => open()} />,
+        <ShoppingCartOutlined key="buy-now-pay-later" onClick={() => open()}/>,
       ]}
     >
       <Meta
-        avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
+        avatar={<Avatar src="https://joeschmoe.io/api/v1/random"/>}
         title="Author"
         description="NFT Description"
       />

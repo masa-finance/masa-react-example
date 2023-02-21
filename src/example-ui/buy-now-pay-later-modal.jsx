@@ -1,6 +1,6 @@
 import { useMasa } from "@masa-finance/masa-react";
 import { Modal, Spin } from "antd";
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 export const BuyNowPayLaterModal = ({
   isModalOpen,
@@ -8,28 +8,26 @@ export const BuyNowPayLaterModal = ({
   neededScore,
 }) => {
   const { masa } = useMasa();
-  const [creditReports, setCreditReports] = useState(null);
+  const [creditScores, setCreditScores] = useState(null);
   const [loading, setLoading] = useState(false);
-  const loadCreditReports = async () => {
+
+  const loadCreditScores = useCallback(async () => {
     setLoading(true);
-    const cr = await masa?.creditScore.list();
-    if (cr.length) {
-      setCreditReports(cr);
-    }
+    setCreditScores(await masa?.creditScore.list());
     setLoading(false);
-  };
+  }, [masa]);
 
   useEffect(() => {
     if (masa && isModalOpen) {
-      loadCreditReports();
+      void loadCreditScores();
     }
-  }, [masa, isModalOpen]);
+  }, [masa, isModalOpen, loadCreditScores]);
 
-  const isCreditReportEnough = useMemo(() => {
-    if (creditReports?.length) {
-      return creditReports[0].metadata.properties.value > neededScore;
+  const isCreditScoreEnough = useMemo(() => {
+    if (creditScores?.length) {
+      return creditScores[0].metadata.properties.value > neededScore;
     }
-  }, [creditReports, neededScore]);
+  }, [creditScores, neededScore]);
 
   return (
     <>
@@ -43,7 +41,7 @@ export const BuyNowPayLaterModal = ({
           <Spin />
         ) : (
           <div>
-            {isCreditReportEnough
+            {isCreditScoreEnough
               ? "Pay later! we cover your payment for now"
               : "Your credit score is not enough for this NFT to pay later, would you want to try a different wallet"}
           </div>

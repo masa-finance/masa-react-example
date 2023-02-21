@@ -1,23 +1,18 @@
-import React, { useCallback, useMemo, useState } from "react";
-import {
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-  UploadOutlined,
-  UserOutlined,
-  CreditCardOutlined,
-} from "@ant-design/icons";
+import React, { useCallback, useMemo } from "react";
+import { UserOutlined } from "@ant-design/icons";
 import { Button, Layout, Menu } from "antd";
 import { useMasa } from "@masa-finance/masa-react";
-import { useNavigate } from "react-router-dom";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 
 const { Header, Sider, Content } = Layout;
 const masaOptions = {
-  scope: ["identity", "credit-report"],
+  scope: ["identity", "credit-score"],
 };
+
 export const ExampleLayout = ({ children }) => {
-  const { masa, connect, loggedIn, walletAddress } = useMasa();
+  const { connect, loggedIn, walletAddress, masa } = useMasa();
   const navigate = useNavigate();
+
   const menuItems = useMemo(() => {
     if (loggedIn) {
       return [
@@ -25,6 +20,11 @@ export const ExampleLayout = ({ children }) => {
           key: "credit-scores",
           icon: <div>💵</div>,
           label: "Credit Scores",
+        },
+        {
+          key: "masa-green",
+          icon: <div>🟢</div>,
+          label: "Masa Green",
         },
         {
           key: "buy-now-pay-later",
@@ -41,11 +41,11 @@ export const ExampleLayout = ({ children }) => {
         },
       ];
     }
-  }, [masa, loggedIn]);
+  }, [loggedIn]);
 
   const handleConnect = useCallback(() => {
     connect(masaOptions);
-  }, [connect, masaOptions]);
+  }, [connect]);
 
   return (
     <Layout className="masa-layout">
@@ -64,7 +64,9 @@ export const ExampleLayout = ({ children }) => {
           <div>Masa Example</div>
 
           <Button type="primary" onClick={handleConnect}>
-            {loggedIn ? walletAddress : "Connect your wallet"}
+            {loggedIn
+              ? `${walletAddress} (${masa.config.network})`
+              : "Connect your wallet"}
           </Button>
         </Header>
         <Content

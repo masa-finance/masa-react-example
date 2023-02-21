@@ -1,14 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.scss";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
-import Root from "./routes/root";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { MasaProvider } from "@masa-finance/masa-react";
-import { CreditReports } from "./routes/credit-reports";
+import { CreditScores } from "./routes/credit-scores";
 import { ExampleLayout } from "./example-ui/layout";
 import { BuyNowPayLaterExample } from "./routes/buy-now-pay-later-example";
+import { Green } from "./routes/green";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -19,7 +18,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "credit-scores",
-        element: <CreditReports />,
+        element: <CreditScores />,
+      },
+      {
+        path: "masa-green",
+        element: <Green />,
       },
       {
         path: "buy-now-pay-later",
@@ -31,7 +34,7 @@ const router = createBrowserRouter([
 
 root.render(
   <React.StrictMode>
-    <MasaProvider company="Teller" environment="dev">
+    <MasaProvider company="Teller" environmentName="dev">
       <RouterProvider router={router} />
     </MasaProvider>
   </React.StrictMode>
