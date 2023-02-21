@@ -7,18 +7,19 @@ First install `masa-react` in your project
 
 Then import and add a provider
 
-```
-
-import { MasaProvider } from "@masa-finance/masa-react";
+```ecmascript 6
+import {
+  MasaProvider
+} from "@masa-finance/masa-react";
 
 ...
 
 function App() {
   return (
     <MasaProvider>
-        ...
+      ...
     </MasaProvider>
-    );
+  );
 }
 
 ```
@@ -34,84 +35,134 @@ Import `useMasa` to have access to the `masa` object, this will let you connect 
 
 ### Example for useMasa ( Connect users wallet )
 
-```
-import { useMasa } from "@masa-finance/masa-react";
+```ecmascript 6
+import {
+  useMasa
+} from "@masa-finance/masa-react";
 
 ...
 
 const { connect } = useMasa();
 
 const connectionCallback = () => {
-    history.push('/dashboard');
+  history.push('/dashboard');
 }
 
 const connectionHandler = useCallback(() => {
-    connect(options)
+  connect(options)
 }, [connect, options]);
 
 ...
 
-<Button onClick={connectionHandler}>Connect with Masa</Button>
+<Button
+  onClick={connectionHandler}>Connect
+  with
+  Masa</Button>
 
 ```
 
 ### Example for masa object ( Wallet is already connected here )
 
-```
-import { useMasa } from "@masa-finance/masa-react";
+```ecmascript 6
+import {
+  useMasa
+} from "@masa-finance/masa-react";
 
 ...
 
 const { masa } = useMasa();
 
-const askForCreditReports = useCallback(() => {
-    const creditReports = await masa?.creditScore.list();
-    console.log({creditReports})
+const askForCreditReports = useCallback(async () => {
+  const creditReports = await masa?.creditScore.list();
+  console.log({ creditReports });
 }, [masa]);
 
 ...
 
-<Button onClick={askForCreditReports}>Show credit reports</Button>
+<Button
+  onClick={askForCreditReports}>Show
+  credit
+  reports</Button>;
 
 ```
 
 ### For some contracts you will need some pre requisites ( Scopes )
-You can specify which scopes you want, here goes an example of requesting the connected user to have an identity
-```
 
+You can specify which scopes you want, here goes an example of requesting the connected user to have an identity
+
+```ecmascript 6
 const options = {
-    scope: ['identity'];
+  scope: ['identity'];
 }
 
 const connectionHandler = useCallback(() => {
-    connect(options)
+  connect(options)
 }, [connect, options]);
 
 ...
 
-<Button onClick={connectionHandler}>Connect with Masa</Button>
+<Button
+  onClick={connectionHandler}>Connect
+  with
+  Masa</Button>
 
 ```
 
 ### Current useMasa shape
 
 ```
-  setProvider?: (provider: any) => void;
-  provider?: any;
+  children?: React.ReactNode;
+  setProvider?: (provider: ethers.Wallet | ethers.Signer | null) => void;
+  provider?: ethers.Wallet | ethers.Signer | null;
   isModalOpen?: boolean;
   setModalOpen?: (val: boolean) => void;
   masa?: Masa;
   isConnected?: boolean;
   loading?: boolean;
-  setLoading?: (val: boolean) => void;
-  walletAddress?: string | null;
-  identity?: any;
+  walletAddress?: string | undefined;
+  identity?: {
+    identityId?: BigNumber | undefined;
+    address?: string | undefined;
+  };
   loggedIn?: boolean;
   handleLogin?: () => void;
-  handleLogout?: () => void;
+  handleLogout?: (callback?: () => void) => void;
   handlePurchaseIdentity?: () => void;
-  connect?: (options?: { scope?: string[]; callback?: Function }) => void;
-  closeModal?: Function;
+  connect?: (options?: { scope?: string[]; callback?: () => void }) => void;
+  closeModal?: () => void;
   scope?: string[];
   company?: string;
+  handleCreateCreditScore?: () => void;
+  creditScores?:
+    | {
+        tokenId: BigNumber;
+        tokenUri: string;
+        metadata?: ICreditScore | undefined;
+      }[]
+    | null;
+  loadCreditScores?: () => void;
+  soulnames?: SoulNameDetails[] | null;
+  loadSoulnames?: () => void;
+  logginLoading?: boolean;
+  missingProvider?: boolean;
+  setMissingProvider?: (value: boolean) => void;
+  greens?:
+    | {
+        tokenId: BigNumber;
+        tokenUri: string;
+        metadata?: IGreen | undefined;
+      }[]
+    | undefined;
+  greenLoading?: boolean;
+  handleCreateGreen?: (
+    phoneNumber: string,
+    code: string
+  ) => Promise<VerifyGreenResult | undefined>;
+  handleGenerateGreen?: (
+    phoneNumber: string
+  ) => Promise<GenerateGreenResult | undefined>;
+  network?: ethers.providers.Network | null;
+  switchNetwork?: (chainId: number) => void;
+  SupportedNetworks?: { [index in NetworkName]: Network };
+  networkName?: NetworkName;
 ```
