@@ -10,7 +10,7 @@ const masaOptions = {
 };
 
 export const ExampleLayout = ({ children }) => {
-  const { connect, loggedIn, walletAddress, masa } = useMasa();
+  const { connect, loggedIn, walletAddress, masa, identity } = useMasa();
   const navigate = useNavigate();
 
   const menuItems = useMemo(() => {
@@ -25,6 +25,11 @@ export const ExampleLayout = ({ children }) => {
           key: "masa-green",
           icon: <div>🟢</div>,
           label: "Masa Green",
+        },
+        {
+          key: "soul-names",
+          icon: <div>👻</div>,
+          label: "Soul Names",
         },
         {
           key: "buy-now-pay-later",
@@ -62,12 +67,18 @@ export const ExampleLayout = ({ children }) => {
       <Layout className="site-layout">
         <Header className="site-layout-background site-layout-header">
           <div>Masa Example</div>
-
-          <Button type="primary" onClick={handleConnect}>
-            {loggedIn
-              ? `${walletAddress} (${masa.config.network})`
-              : "Connect your wallet"}
-          </Button>
+          <div>
+            <div style={{ lineHeight: "3em" }}>
+              <Button type="primary" onClick={handleConnect}>
+                {loggedIn
+                  ? `${walletAddress} (${masa.config.network})`
+                  : "Connect your wallet"}
+              </Button>
+            </div>
+            <div style={{ lineHeight: "2em" }}>
+              Identity ID: {identity?.identityId?.toString() || ""}
+            </div>
+          </div>
         </Header>
         <Content
           className="site-layout-background"

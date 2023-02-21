@@ -8,6 +8,7 @@ import { CreditScores } from "./routes/credit-scores";
 import { ExampleLayout } from "./example-ui/layout";
 import { BuyNowPayLaterExample } from "./routes/buy-now-pay-later-example";
 import { Green } from "./routes/green";
+import { SoulNames } from "./routes/soul-names";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "masa-green",
         element: <Green />,
+      },
+      {
+        path: "soul-names",
+        element: <SoulNames />,
       },
       {
         path: "buy-now-pay-later",

@@ -5,25 +5,27 @@ import { FakeNFT } from "../example-ui/fake-nft";
 
 export const BuyNowPayLaterExample = () => {
   const [modalOpen, setModalOpen] = useState(false);
+
   return (
     <>
       <Row gutter={[16, 24]}>
         <Col className="gutter-row" span={6}>
-          <FakeNFT open={() => setModalOpen(true)} />
+          <FakeNFT open={() => setModalOpen(true)}/>
         </Col>
         <Col className="gutter-row" span={6}>
-          <FakeNFT open={() => setModalOpen(true)} />
+          <FakeNFT open={() => setModalOpen(true)}/>
         </Col>
         <Col className="gutter-row" span={6}>
-          <FakeNFT open={() => setModalOpen(true)} />
+          <FakeNFT open={() => setModalOpen(true)}/>
         </Col>
         <Col className="gutter-row" span={6}>
-          <FakeNFT open={() => setModalOpen(true)} />
+          <FakeNFT open={() => setModalOpen(true)}/>
         </Col>
         <Col className="gutter-row" span={6}>
-          <FakeNFT open={() => setModalOpen(true)} />
+          <FakeNFT open={() => setModalOpen(true)}/>
         </Col>
       </Row>
+
       <BuyNowPayLaterModal
         isModalOpen={modalOpen}
         neededScore={800}

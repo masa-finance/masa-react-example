@@ -1,27 +1,13 @@
 import { useMasa } from "@masa-finance/masa-react";
 import { Button, Spin, Table } from "antd";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 
 export const CreditScores = () => {
-  const { masa } = useMasa();
-  const [creditScore, setCreditScore] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  const loadCreditScores = useCallback(async () => {
-    setLoading(true);
-    setCreditScore(await masa?.creditScore.list());
-    setLoading(false);
-  }, [masa]);
-
-  useEffect(() => {
-    if (masa) {
-      void loadCreditScores();
-    }
-  }, [masa, loadCreditScores]);
+  const { creditScores, loading, loadCreditScores } = useMasa();
 
   const tableData = useMemo(() => {
-    if (creditScore) {
-      return creditScore.map((creditScore) => {
+    if (creditScores) {
+      return creditScores.map((creditScore) => {
         return {
           score: creditScore.metadata.properties.value,
           rating: creditScore.metadata.properties.value_rating,
@@ -30,7 +16,7 @@ export const CreditScores = () => {
         };
       });
     }
-  }, [creditScore]);
+  }, [creditScores]);
 
   const columns = [
     {
@@ -60,7 +46,7 @@ export const CreditScores = () => {
       <div className="credit-scores-header">
         <Button onClick={loadCreditScores}>Reload Credit Scores</Button>
       </div>
-      {!loading && creditScore ? (
+      {!loading && creditScores ? (
         <Table dataSource={tableData} columns={columns} />
       ) : (
         <div className="loading-container">
