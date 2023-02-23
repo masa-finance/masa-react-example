@@ -3,7 +3,7 @@ import { Button, Spin, Table } from "antd";
 import { useMemo } from "react";
 
 export const CreditScores = () => {
-  const { creditScores, loading, loadCreditScores } = useMasa();
+  const { creditScores, isCreditScoresLoading, reloadCreditScores } = useMasa();
 
   const tableData = useMemo(() => {
     if (creditScores) {
@@ -44,9 +44,9 @@ export const CreditScores = () => {
   return (
     <div>
       <div className="credit-scores-header">
-        <Button onClick={loadCreditScores}>Reload Credit Scores</Button>
+        <Button onClick={reloadCreditScores}>Reload Credit Scores</Button>
       </div>
-      {!loading && creditScores ? (
+      {!isCreditScoresLoading && creditScores ? (
         <Table dataSource={tableData} columns={columns} />
       ) : (
         <div className="loading-container">

@@ -10,11 +10,11 @@ const masaOptions = {
 };
 
 export const ExampleLayout = ({ children }) => {
-  const { connect, loggedIn, walletAddress, masa, identity } = useMasa();
+  const { connect, isLoggedIn, walletAddress, masa, identity } = useMasa();
   const navigate = useNavigate();
 
   const menuItems = useMemo(() => {
-    if (loggedIn) {
+    if (isLoggedIn) {
       return [
         {
           key: "credit-scores",
@@ -46,7 +46,7 @@ export const ExampleLayout = ({ children }) => {
         },
       ];
     }
-  }, [loggedIn]);
+  }, [isLoggedIn]);
 
   const handleConnect = useCallback(() => {
     connect(masaOptions);
@@ -70,7 +70,7 @@ export const ExampleLayout = ({ children }) => {
           <div>
             <div style={{ lineHeight: "3em" }}>
               <Button type="primary" onClick={handleConnect}>
-                {loggedIn
+                {isLoggedIn
                   ? `${walletAddress} (${masa.config.network})`
                   : "Connect your wallet"}
               </Button>

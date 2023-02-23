@@ -2,14 +2,14 @@ import { useMasa } from "@masa-finance/masa-react";
 import { Button, Spin } from "antd";
 
 export const SoulNames = () => {
-  const { masa, soulnames, loading, loadSoulnames } = useMasa();
+  const { masa, soulnames, isSoulnamesLoading, reloadSoulnames } = useMasa();
 
   return (
     <div>
       <div className="credit-scores-header">
-        <Button onClick={loadSoulnames}>Reload Soul Names</Button>
+        <Button onClick={reloadSoulnames}>Reload Soul Names</Button>
       </div>
-      {!loading && soulnames ? (
+      {!isSoulnamesLoading && soulnames ? (
         soulnames.length > 0 ? (
           soulnames.map((soulName) => (
             <div

@@ -2,14 +2,14 @@ import { useMasa } from "@masa-finance/masa-react";
 import { Button, Spin } from "antd";
 
 export const Green = () => {
-  const { masa, greens, greenLoading } = useMasa();
+  const { masa, greens, isGreensLoading, reloadGreens } = useMasa();
 
   return (
     <div>
       <div className="credit-scores-header">
-        <Button onClick={() => {}}>Reload Greens</Button>
+        <Button onClick={reloadGreens}>Reload Greens</Button>
       </div>
-      {!greenLoading && greens ? (
+      {!isGreensLoading && greens ? (
         greens.length > 0 ? (
           greens.map((green) => (
             <div key={green.tokenId.toString()}>
