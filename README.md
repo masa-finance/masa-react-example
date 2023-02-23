@@ -7,7 +7,7 @@ First install `masa-react` in your project
 
 Then import and add a provider
 
-```ecmascript 6
+```typescript jsx
 import {
   MasaProvider
 } from "@masa-finance/masa-react";
@@ -35,7 +35,7 @@ Import `useMasa` to have access to the `masa` object, this will let you connect 
 
 ### Example for useMasa ( Connect users wallet )
 
-```ecmascript 6
+```typescript jsx
 import {
   useMasa
 } from "@masa-finance/masa-react";
@@ -63,7 +63,7 @@ const connectionHandler = useCallback(() => {
 
 ### Example for masa object ( Wallet is already connected here )
 
-```ecmascript 6
+```typescript jsx
 import {
   useMasa
 } from "@masa-finance/masa-react";
@@ -90,7 +90,7 @@ const askForCreditReports = useCallback(async () => {
 
 You can specify which scopes you want, here goes an example of requesting the connected user to have an identity
 
-```ecmascript 6
+```typescript jsx
 const options = {
   scope: ['identity'];
 }
@@ -110,59 +110,89 @@ const connectionHandler = useCallback(() => {
 
 ### Current useMasa shape
 
-```
+```typescript
+export interface MasaShape {
   children?: React.ReactNode;
-  setProvider?: (provider: ethers.Wallet | ethers.Signer | null) => void;
-  provider?: ethers.Wallet | ethers.Signer | null;
-  isModalOpen?: boolean;
-  setModalOpen?: (val: boolean) => void;
+
+  // masa
   masa?: Masa;
-  isConnected?: boolean;
-  loading?: boolean;
-  walletAddress?: string | undefined;
-  identity?: {
-    identityId?: BigNumber | undefined;
-    address?: string | undefined;
-  };
-  loggedIn?: boolean;
-  handleLogin?: () => void;
-  handleLogout?: (callback?: () => void) => void;
-  handlePurchaseIdentity?: () => void;
+  // global loading
+  isLoading?: boolean;
+
+  // global connect
   connect?: (options?: { scope?: string[]; callback?: () => void }) => void;
-  closeModal?: () => void;
+
+  // general config
   scope?: string[];
   company?: string;
-  handleCreateCreditScore?: () => void;
+
+  // provider
+  provider?: ethers.Wallet | ethers.Signer;
+  setProvider?: (provider?: ethers.Wallet | ethers.Signer) => void;
+
+  // modal
+  isModalOpen?: boolean;
+  setModalOpen?: (val: boolean) => void;
+  closeModal?: () => void;
+
+  // wallet
+  walletAddress?: string;
+  isWalletLoading?: boolean;
+  isConnected?: boolean;
+
+  // identity
+  identity?: {
+    identityId?: BigNumber;
+    address?: string;
+  };
+  isIdentityLoading?: boolean;
+  handlePurchaseIdentity?: () => void;
+  reloadIdentity?: () => void;
+
+  // session
+  isLoggedIn?: boolean;
+  isSessionLoading?: boolean;
+  handleLogin?: () => void;
+  handleLogout?: (logoutCallback?: () => void) => void;
+
+  // credit scores
   creditScores?:
     | {
-        tokenId: BigNumber;
-        tokenUri: string;
-        metadata?: ICreditScore | undefined;
-      }[]
-    | null;
-  loadCreditScores?: () => void;
-  soulnames?: SoulNameDetails[] | null;
-  loadSoulnames?: () => void;
-  logginLoading?: boolean;
-  missingProvider?: boolean;
-  setMissingProvider?: (value: boolean) => void;
+    tokenId: BigNumber;
+    tokenUri: string;
+    metadata?: ICreditScore | undefined;
+  }[];
+  isCreditScoresLoading?: boolean;
+  handleCreateCreditScore?: () => void;
+  reloadCreditScores?: () => void;
+
+  // soul names
+  soulnames?: SoulNameDetails[];
+  isSoulnamesLoading?: boolean;
+  reloadSoulnames?: () => void;
+
+  // greens
   greens?:
     | {
-        tokenId: BigNumber;
-        tokenUri: string;
-        metadata?: IGreen | undefined;
-      }[]
+    tokenId: BigNumber;
+    tokenUri: string;
+    metadata?: IGreen;
+  }[]
     | undefined;
-  greenLoading?: boolean;
+  isGreensLoading?: boolean;
+  handleGenerateGreen?: (
+    phoneNumber: string
+  ) => Promise<GenerateGreenResult | undefined>;
   handleCreateGreen?: (
     phoneNumber: string,
     code: string
   ) => Promise<VerifyGreenResult | undefined>;
-  handleGenerateGreen?: (
-    phoneNumber: string
-  ) => Promise<GenerateGreenResult | undefined>;
-  network?: ethers.providers.Network | null;
-  switchNetwork?: (chainId: number) => void;
-  SupportedNetworks?: { [index in NetworkName]: Network };
+  reloadGreens?: () => void;
+
+  // network
   networkName?: NetworkName;
+  network?: ethers.providers.Network;
+  SupportedNetworks?: Partial<{ [index in NetworkName]: Network }>;
+  switchNetwork?: (chainId: number) => void;
+}
 ```
