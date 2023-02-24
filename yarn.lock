@@ -1947,17 +1947,17 @@
   dependencies:
     ethers "~5.7.2"
 
-"@masa-finance/masa-react@^0.28.0-alpha.3":
-  version "0.28.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@masa-finance/masa-react/-/masa-react-0.28.0-alpha.3.tgz#705bfbd360b604e0d80c54c438719c1ece7821b0"
-  integrity sha512-AuzabAFLyCmivMj+eKPMrblHQi6simbxdqNgFknKxEnz+cwSLv6YeC902/KuDMzM1eTJam8tlkqqq209jwZQGQ==
+"@masa-finance/masa-react@^0.28.2":
+  version "0.28.2"
+  resolved "https://registry.yarnpkg.com/@masa-finance/masa-react/-/masa-react-0.28.2.tgz#525cc69bd439d38393bb114218924af646ba69bb"
+  integrity sha512-aVNLGTvi4KJ9ua8t42Ufxigkg52vKGc0YxD9idYogculNYeuu3knAcSCHxcrXysswII/6ZB8RWbOQ5epInwToA==
   dependencies:
     "@masa-finance/masa-sdk" "^1.5.5"
     "@metamask/providers" "^10.2.1"
     babel-loader "^9.1.2"
     babel-plugin-import "^1.13.6"
     babel-preset-react-app "^10.0.1"
-    cssnano "^5.1.14"
+    cssnano "^5.1.15"
     node-sass "^8.0.0"
     react "^18.2.0"
     react-query "^3.39.3"
@@ -4406,7 +4406,7 @@ cssnano-utils@^3.1.0:
   resolved "https://registry.yarnpkg.com/cssnano-utils/-/cssnano-utils-3.1.0.tgz#95684d08c91511edfc70d2636338ca37ef3a6861"
   integrity sha512-JQNR19/YZhz4psLX/rQ9M83e3z2Wf/HdJbryzte4a3NSuafyp9w/I4U+hx5C2S9g41qlstH7DEWnZaaj83OuEA==
 
-cssnano@^5.0.6, cssnano@^5.1.14:
+cssnano@^5.0.6, cssnano@^5.1.15:
   version "5.1.15"
   resolved "https://registry.yarnpkg.com/cssnano/-/cssnano-5.1.15.tgz#ded66b5480d5127fcb44dac12ea5a983755136bf"
   integrity sha512-j+BKgDcLDQA+eDifLx0EO4XSA56b7uut3BQFH+wbSaSTuGLuiyTa/wbRYthUXX8LC9mLg+WWKe8h+qJuwTAbHw==

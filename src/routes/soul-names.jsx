@@ -17,7 +17,7 @@ export const SoulNames = () => {
               style={{ display: "inline-block", margin: "2em" }}
             >
               <div>TokenId: {soulName.tokenDetails?.tokenId?.toString()}</div>
-              <div>Name: {soulName.tokenDetails?.sbtName}</div>
+              <div>Name: {soulName.metadata.name}</div>
 
               <img
                 alt={soulName.tokenDetails.sbtName}
@@ -34,7 +34,7 @@ export const SoulNames = () => {
         )
       ) : (
         <div className="loading-container">
-          <Spin />
+          <Spin/>
         </div>
       )}
     </div>
