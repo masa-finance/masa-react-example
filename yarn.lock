@@ -1947,10 +1947,10 @@
   dependencies:
     ethers "~5.7.2"
 
-"@masa-finance/masa-react@^1.0.12":
-  version "1.0.12"
-  resolved "https://registry.yarnpkg.com/@masa-finance/masa-react/-/masa-react-1.0.12.tgz#fc7eda843dc39880640ab3fa6356fc45b85c9a0a"
-  integrity sha512-JVyD9tcbW0No688WhLIAk9PC/A9/AipR17/KOvQ5Z4uJDXB59oiVlJOYEQCMlBkiioV49jGvbXYTNi6D4R5tWA==
+"@masa-finance/masa-react@^1.0.13":
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/@masa-finance/masa-react/-/masa-react-1.0.13.tgz#63e908336c4509a7bbb9d38f1261f368e013af8a"
+  integrity sha512-koLykUSmcD31KxF9RrFF2bM6t4r/odRCQahTG70fQdzY+6GNlTA3rqzMWB0h6Zot47oFcYzfYXc/ubir3Lqa1w==
   dependencies:
     "@babel/preset-typescript" "^7.21.0"
     "@masa-finance/masa-sdk" "^1.6.5"
