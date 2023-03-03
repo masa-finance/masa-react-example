@@ -23,7 +23,7 @@ export const SoulNames = () => {
                 alt={soulName.tokenDetails.sbtName}
                 width={200}
                 src={`https://arweave.net/${soulName.metadata.image.replace(
-                  "ar://",
+                  masa.soulName.getSoulNameMetadataPrefix(),
                   ""
                 )}`}
               />
@@ -34,7 +34,7 @@ export const SoulNames = () => {
         )
       ) : (
         <div className="loading-container">
-          <Spin/>
+          <Spin />
         </div>
       )}
     </div>
