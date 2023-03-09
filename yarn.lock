@@ -1947,13 +1947,13 @@
   dependencies:
     ethers "~5.7.2"
 
-"@masa-finance/masa-react@^1.0.32":
-  version "1.0.32"
-  resolved "https://registry.yarnpkg.com/@masa-finance/masa-react/-/masa-react-1.0.32.tgz#0cda972030e381e1c62e0b17d66fa52c57042301"
-  integrity sha512-pNUdSWc0j2dXJY2rVR4Zw5pf3ALUP33jaID28gB1+YgnOiFkZZm5MhYOCv+f/NJsVU1KGu0JO57K+yb4I8CaTg==
+"@masa-finance/masa-react@^1.0.33":
+  version "1.0.33"
+  resolved "https://registry.yarnpkg.com/@masa-finance/masa-react/-/masa-react-1.0.33.tgz#6b2f9df9c5aa303cffd59f7bcf27b92874bad46a"
+  integrity sha512-t67aBL1JktUrjKOtrxE5mY6NhO4DniFmPkgI7eb7q6BJDporhbgMb2OcD1Nspsj1i8YKKTB60zIHNXwhO/Qp+A==
   dependencies:
     "@babel/preset-typescript" "^7.21.0"
-    "@masa-finance/masa-sdk" "^1.7.3"
+    "@masa-finance/masa-sdk" "^1.8.0"
     "@metamask/providers" "^10.2.1"
     babel-loader "^9.1.2"
     babel-plugin-import "^1.13.6"
@@ -1969,10 +1969,10 @@
     storybook-addon-sass-postcss "^0.1.3"
     tsconfig-paths-webpack-plugin "^4.0.0"
 
-"@masa-finance/masa-sdk@^1.7.3":
-  version "1.7.3"
-  resolved "https://registry.yarnpkg.com/@masa-finance/masa-sdk/-/masa-sdk-1.7.3.tgz#386be471e1d5dab48d58d06d07333cdb0f5eed19"
-  integrity sha512-PH0QBm/jbPv4BvUwFbR1JAeO/wanMB6OftWxg91lvj3C6CLJst/5LaqSCFwwPV6Zl4aos3BJPmu7jl2n1T4MKw==
+"@masa-finance/masa-sdk@^1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@masa-finance/masa-sdk/-/masa-sdk-1.8.0.tgz#86a468fff18845fd14b01bbdf8d7c4a88806f499"
+  integrity sha512-yQ1+BVh3sm+kdMZ2zsHAmrTL2tCBYQ9ckxHDw37QIM6DN7iU2IxveznYf0DysIBEPKrhXj7oNly+9YUtryLt2g==
   dependencies:
     "@masa-finance/masa-contracts-identity" "^1.3.5"
     "@masa-finance/masa-token" "^1.0.0"
