@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@acusti/react-code-input@^3.11.0":
+  version "3.11.0"
+  resolved "https://registry.yarnpkg.com/@acusti/react-code-input/-/react-code-input-3.11.0.tgz#b1c54e7e0d5011b3301b07780dd71e59f3ecbea7"
+  integrity sha512-G7BOfPxFguoYi9vQzibgFwmukQozc3CJ45m57L8HXbER3N0WOfurAmcsCboaAiW/PwPG0YMDadBtGH6xuH5rCw==
+  dependencies:
+    classnames "^2.2.5"
+
 "@adobe/css-tools@^4.0.1":
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/@adobe/css-tools/-/css-tools-4.1.0.tgz#417fef4a143f4396ad0b3b4351fee21323f15aa8"
@@ -2045,11 +2052,12 @@
   dependencies:
     ethers "~5.7.2"
 
-"@masa-finance/masa-react@^1.1.30":
-  version "1.1.30"
-  resolved "https://registry.yarnpkg.com/@masa-finance/masa-react/-/masa-react-1.1.30.tgz#247d19106489148716fe1d1de099228381b2f8fa"
-  integrity sha512-V2oSwKGb8wX7YHFUP9bWH/B5enVQM+50vehg2DJbJ2LYXYgCWThNIilEofoMi0Wf4FKP+eIqlpDekHFgouMTkQ==
+"@masa-finance/masa-react@^1.1.35":
+  version "1.1.35"
+  resolved "https://registry.yarnpkg.com/@masa-finance/masa-react/-/masa-react-1.1.35.tgz#890a13648e333e4cce93cf35102882cd14019d2b"
+  integrity sha512-d3u4r8azRtyfEJ3x4jLVu/cxyWEUTBDlyeIKzo6Cb9oR1rj/uuQLBGyEpRq+dHmMEbdSp16sEO01Nvb9SLaVzw==
   dependencies:
+    "@acusti/react-code-input" "^3.11.0"
     "@babel/preset-typescript" "^7.21.4"
     "@masa-finance/masa-sdk" "^1.13.2"
     "@metamask/providers" "^10.2.1"
@@ -2061,8 +2069,10 @@
     html-webpack-plugin "^5.5.0"
     node-sass "^8.0.0"
     react "^18.2.0"
+    react-phone-number-input "^3.2.19"
     react-query "^3.39.3"
     react-spinners "^0.13.8"
+    reaptcha "^1.12.1"
     rodal "^2.0.0"
     storybook-addon-sass-postcss "^0.1.3"
 
@@ -4372,6 +4382,11 @@ cosmiconfig@^7.0.0:
     path-type "^4.0.0"
     yaml "^1.10.0"
 
+country-flag-icons@^1.5.4:
+  version "1.5.7"
+  resolved "https://registry.yarnpkg.com/country-flag-icons/-/country-flag-icons-1.5.7.tgz#f1f2ddf14f3cbf01cba6746374aeba94db35d4b4"
+  integrity sha512-AdvXhMcmSp7nBSkpGfW4qR/luAdRUutJqya9PuwRbsBzuoknThfultbv7Ib6fWsHXC43Es/4QJ8gzQQdBNm75A==
+
 cross-spawn@^7.0.2, cross-spawn@^7.0.3:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.3.tgz#f73a85b9d5d41d045551c177e2882d4ac85728a6"
@@ -6572,6 +6587,13 @@ ini@^1.3.5:
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.8.tgz#a29da425b48806f34767a4efce397269af28432c"
   integrity sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==
 
+input-format@^0.3.8:
+  version "0.3.8"
+  resolved "https://registry.yarnpkg.com/input-format/-/input-format-0.3.8.tgz#9445b0cab2f0457fbe36d77d607e942fd37345c5"
+  integrity sha512-tLR0XRig1xIcG1PtIpMd/uoltvkAI62CN9OIbtj4/tEJAkqTCQLNHUZ9N4M46w0dopny7Rlt/lRH5Xzp7e6F+g==
+  dependencies:
+    prop-types "^15.8.1"
+
 internal-slot@^1.0.3, internal-slot@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/internal-slot/-/internal-slot-1.0.5.tgz#f2a2ee21f668f8627a4667f309dc0f4fb6674986"
@@ -7669,6 +7691,11 @@ levn@~0.3.0:
   dependencies:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
+
+libphonenumber-js@^1.10.20:
+  version "1.10.26"
+  resolved "https://registry.yarnpkg.com/libphonenumber-js/-/libphonenumber-js-1.10.26.tgz#3e6604357b3434b0005f85778b44153f4fadeecd"
+  integrity sha512-oB3l4J5gEhMV+ymmlIjWedsbCpsNRqbEZ/E/MpN2QVyinKNra6DcuXywxSk/72M3DZDoH/6kzurOq1erznBMwQ==
 
 lie@3.1.1:
   version "3.1.1"
@@ -10129,6 +10156,17 @@ react-is@^18.0.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-18.2.0.tgz#199431eeaaa2e09f86427efbb4f1473edb47609b"
   integrity sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==
 
+react-phone-number-input@^3.2.19:
+  version "3.2.19"
+  resolved "https://registry.yarnpkg.com/react-phone-number-input/-/react-phone-number-input-3.2.19.tgz#78e09f12235b5c3a46555324198abd2c36b69d3e"
+  integrity sha512-3peWqyFgJ3+IvkB0GHvhAzQ6LEfJw1/obG8KPvCcac8OKp9Ir+pLdyySgxbD56EYkaAwZbBwOQJaGNqIX0yrtg==
+  dependencies:
+    classnames "^2.3.1"
+    country-flag-icons "^1.5.4"
+    input-format "^0.3.8"
+    libphonenumber-js "^1.10.20"
+    prop-types "^15.8.1"
+
 react-query@^3.39.3:
   version "3.39.3"
   resolved "https://registry.yarnpkg.com/react-query/-/react-query-3.39.3.tgz#4cea7127c6c26bdea2de5fb63e51044330b03f35"
@@ -10279,6 +10317,11 @@ readdirp@~3.6.0:
   integrity sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==
   dependencies:
     picomatch "^2.2.1"
+
+reaptcha@^1.12.1:
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/reaptcha/-/reaptcha-1.12.1.tgz#1993d2f2ed52669188f16e3210afbf89b7221211"
+  integrity sha512-zoppfGKHmo8x4PBmSrIQYQOGgVp1e8wMhr6KbwAdbQ76rSky1DcDCXLWRtBg7HGXn2hw+o+0hknafMB0rnrzZQ==
 
 recursive-readdir@^2.2.2:
   version "2.2.3"
