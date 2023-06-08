@@ -22,10 +22,9 @@ export const SoulNames = () => {
               <img
                 alt={soulName.tokenDetails.sbtName}
                 width={200}
-                src={`https://arweave.net/${soulName.metadata.image.replace(
-                  masa.soulName.getSoulNameMetadataPrefix(),
-                  ""
-                )}`}
+                src={`https://arweave.net/${soulName.metadata.image
+                  .replace("ar://", "")
+                  .replace("https://arweave.net/", "")}`}
               />
             </div>
           ))
