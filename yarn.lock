@@ -2144,15 +2144,15 @@
   dependencies:
     ethers "~5.7.2"
 
-"@masa-finance/masa-react@^2.4.13":
-  version "2.4.13"
-  resolved "https://registry.yarnpkg.com/@masa-finance/masa-react/-/masa-react-2.4.13.tgz#f725aa356f6b61d30c1447cf28caedc7122d083e"
-  integrity sha512-QvHOyxOis7BD9zvDQ1ecUlx4zczQ4IT948fZFTYV3rEdbBvi/TCFs+5BnTWl3GvG/0+EZ7i3F/whUEXXAsVgYA==
+"@masa-finance/masa-react@^2.4.14":
+  version "2.4.14"
+  resolved "https://registry.yarnpkg.com/@masa-finance/masa-react/-/masa-react-2.4.14.tgz#5a340bba9f27a41bb0b5043867e56500963735bb"
+  integrity sha512-lB5XbhAC383aoEP6j6hmhoclV76Quhu1hx5R7LlH7xAVYVdE8+6vSAiA6c6lEbxEvepuSPpggnEAIUm6NtnhBA==
   dependencies:
     "@acusti/react-code-input" "^3.11.0"
     "@babel/preset-typescript" "^7.21.5"
     "@celo/rainbowkit-celo" "^0.11.1"
-    "@masa-finance/masa-sdk" "^3.4.10"
+    "@masa-finance/masa-sdk" "^3.4.11"
     "@metamask/providers" "^11.0.0"
     "@rainbow-me/rainbowkit" "0.12.14"
     "@wagmi/core" "0.10.11"
@@ -2175,10 +2175,10 @@
     storybook-addon-sass-postcss "^0.1.3"
     wagmi "0.12.13"
 
-"@masa-finance/masa-sdk@^3.4.10":
-  version "3.4.10"
-  resolved "https://registry.yarnpkg.com/@masa-finance/masa-sdk/-/masa-sdk-3.4.10.tgz#8a3dff09c74431651aa44bde426d21df6241d140"
-  integrity sha512-sj/W+yC5kVkrQ86c51tKQpYm/6k6+Bk7Owqe5ws+zRV5jXnnoILFTXfmp4qsRm5KqXgm+XHHx/dNZCjxWkS5BQ==
+"@masa-finance/masa-sdk@^3.4.11":
+  version "3.4.11"
+  resolved "https://registry.yarnpkg.com/@masa-finance/masa-sdk/-/masa-sdk-3.4.11.tgz#ff804b14b38c05c4590fe0ed3ecc1a86b8cf1dca"
+  integrity sha512-eKwIjbKGtLm6l7CsGkQz3w3iGjkVz5sIOe8iltoLabncqoVdv0zM2sSSdZoNcCLI3seHyf5iKo36PpZqG2Lv8g==
   dependencies:
     "@masa-finance/masa-contracts-identity" "^1.8.2"
     "@masa-finance/masa-token" "^2.0.0"
